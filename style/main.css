@@ -1,3 +1,16 @@
+
+:root {
+    --pink: #FFE1E9;
+    --chocolate: #524A43;
+    --coffee: #D2BFAE;
+    --blue1:#1E2C4B;
+    --blue2: #8CA5FF;
+    --blue3: #002ED6;
+    --black: #241A00;
+    --white: #E3EAFC;
+}
+
 body {
     margin: 0;
+    background-color: var(--pink);
 }
