@@ -1,0 +1,10 @@
+*
+**/*
+
+!img/
+!scripts/
+!style/
+!.gitignore
+!*.html
+!*.css
+!*.js
