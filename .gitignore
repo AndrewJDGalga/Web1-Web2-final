@@ -1,11 +1,13 @@
 *
 **/*
 
+!data/
 !pages/
 !img/
 !scripts/
 !style/
 !.gitignore
+!*.csv
 !*.html
 !*.css
 !*.js
