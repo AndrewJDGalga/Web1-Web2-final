@@ -92,6 +92,14 @@ footer {
     float: right;
 }
 
+.box-shadow {
+    box-shadow: 24px 16px 16px var(--chocolate);
+}
+
+.text-shadow {
+    text-shadow: 24px 16px 16px var(--chocolate);
+}
+
 .tagline {
     font-size: medium;
     margin-left: 128px;
