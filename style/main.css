@@ -15,6 +15,10 @@
     src: url('../font/IceCreamPartySolid.ttf') format('opentype');
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     background-color: var(--pink);
@@ -58,6 +62,13 @@ nav ul {
 nav ul a {
     text-decoration: none;
     color: var(--chocolate);
+}
+
+footer {
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    margin-left: 16px;
 }
 
 .absolute {
