@@ -31,7 +31,7 @@ img {
 header {
     width: 90%;
     float: right;
-    margin-top: 16%;
+    margin-top: 32px;
 }
 
 h1, h2 {
@@ -44,10 +44,17 @@ h1 {
     margin: 0;
 }
 
+nav {
+    margin-top: 64px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: left;
+    gap: 64px;
+    padding: 0;
 }
 
 nav ul a {
