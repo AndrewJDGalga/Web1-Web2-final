@@ -1,3 +1,7 @@
 main {
     clear: both;
 }
+
+#close {
+    top: 32px;
+}
