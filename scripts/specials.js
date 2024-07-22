@@ -1,5 +1,5 @@
-const specials = document.querySelector('#specials-popup');
+const specials = document.getElementById('close');
 
-closeWindow.onclick = () => {
-    console.log('leave');
+specials.onclick = () => {
+    window.close();
 }
