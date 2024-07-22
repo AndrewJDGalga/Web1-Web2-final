@@ -44,6 +44,11 @@ h1 {
     font-family: 'IceCreamPartySolid', serif;
     font-size: 5rem;
     margin: 0;
+    text-shadow: 24px 16px 24px var(--chocolate);
+}
+
+h2 {
+    text-shadow: 8px 8px 8px var(--chocolate);
 }
 
 nav {
@@ -92,14 +97,6 @@ footer {
     float: right;
 }
 
-.box-shadow {
-    box-shadow: 24px 16px 16px var(--chocolate);
-}
-
-.text-shadow {
-    text-shadow: 24px 16px 16px var(--chocolate);
-}
-
 .tagline {
     font-size: medium;
     margin-left: 128px;
@@ -122,6 +119,8 @@ footer {
 .link-button:hover, .link-button:active {
     background-color: var(--chocolate);
     color: var(--pink);
+
+    box-shadow: 24px 16px 16px var(--chocolate);
 }
 
 .link-specials {
@@ -131,4 +130,6 @@ footer {
 .link-specials:hover, .link-specials:active {
     background-color: var(--blue3);
     color: var(--coffee);
+
+    box-shadow: 24px 16px 16px var(--blue3);
 }
