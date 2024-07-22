@@ -29,8 +29,6 @@ img {
 }
 
 header {
-    width: 90%;
-    float: right;
     margin-top: 32px;
 }
 
@@ -71,8 +69,16 @@ nav ul a {
     right: 0;
 }
 
-.fourty-percent {
-    width: 40%;
+.thirty-percent {
+    width: 30%;
+}
+
+.ninty-percent {
+    width: 90%;
+}
+
+.float-right {
+    float: right;
 }
 
 .tagline {
@@ -83,6 +89,7 @@ nav ul a {
 .home-img {
     min-width: 156px;
     max-width: 1920px;
+    margin-right: 64px;
 }
 
 .link-button {
