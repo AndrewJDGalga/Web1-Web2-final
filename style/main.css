@@ -77,3 +77,25 @@ nav ul a {
     min-width: 156px;
     max-width: 1920px;
 }
+
+.link-button {
+    font-size: larger;
+    border: 2px var(--chocolate) solid;
+    border-radius: 16px;
+    background-color: var(--pink);
+    padding: 1rem;
+}
+
+.link-button:hover, .link-button:active {
+    background-color: var(--chocolate);
+    color: var(--pink);
+}
+
+.link-specials {
+    background-color: var(--coffee);
+    color: var(--blue3);
+}
+.link-specials:hover, .link-specials:active {
+    background-color: var(--blue3);
+    color: var(--coffee);
+}
