@@ -10,7 +10,34 @@
     --white: #E3EAFC;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     background-color: var(--pink);
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.fourty-percent {
+    width: 40%;
+}
+
+.home-img {
+    min-width: 156px;
+    max-width: 1920px;
 }
