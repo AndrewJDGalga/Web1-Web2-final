@@ -5,7 +5,7 @@ for(let i = 0; i < specialsBtns.length; i++) {
     const criteria = /pages/g;
     const result = locationTest.search(criteria);
     specialsBtns[i].onclick = () => { 
-        const specialsLocation = (result === -1) ? './pages/specials.html' : '../pages/specials.html';
+        const specialsLocation = (result === -1) ? './pages/specials.html' : './specials.html';
         window.open(specialsLocation, '_blank', 'popup');
     }
 }
