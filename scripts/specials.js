@@ -8,4 +8,12 @@ specialsClose.onclick = () => {
 }
 
 const content = await getCSVContent(specialsCSVLocation);
-console.log(content);
+
+if(content !== '') {
+    const rows = content.split('\r\n');
+    const noHead = rows.slice(1);
+    const noEmpty = noHead.filter(line=> line !== "");
+    const rowByComma = noEmpty.map(row=> row.split(','));
+
+    console.log(rowByComma);
+}
