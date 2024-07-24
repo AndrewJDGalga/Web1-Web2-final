@@ -2,10 +2,11 @@ import { getCSVContent, makeBlocks } from "./utility.js";
 const menuTableHead = document.querySelector('#menu thead');
 const menuTableBody = document.querySelector('#menu tbody');
 const menuCSVLocation = '../data/menu.csv';
+const imgLocationPosition = 1;
 
 const content = await getCSVContent(menuCSVLocation);
 
-const createTableCell = (tag, text="", src="") => {
+const createTableCell = (tag, text='', src='') => {
     const cell = document.createElement('td');
     const cellElement = document.createElement(tag);
 
@@ -18,17 +19,29 @@ const createTableCell = (tag, text="", src="") => {
 
 if(content !== '') {
     const rows = makeBlocks(content);
-    const headRow = rows[0];
+    const headRowSrc = rows[0];
     const bodyRows = rows.slice(1);
+    const bodyFrag = document.createDocumentFragment();
 
-    const headTR = document.createElement('tr');
+    const headRow = document.createElement('tr');
 
-    headRow.forEach(element => {
+    headRowSrc.forEach(element => {
         const newCell = createTableCell('p', element);
-        headTR.appendChild(newCell);
+        headRow.appendChild(newCell);
     });
 
-    menuTableHead.append(headTR);
+    menuTableHead.append(headRow);
+    
+    bodyRows.forEach(arr=>{
+        const bodyRow = document.createElement('tr');
+        for(let i = 0; i < arr.length; i++){
+            const newCell = (i === imgLocationPosition) ? createTableCell('img', '', arr[i]) : createTableCell('i', arr[i]);
+            bodyRow.appendChild(newCell);
+        }
+        bodyFrag.appendChild(bodyRow);
+    });
+
+    menuTableBody.appendChild(bodyFrag);
     
     /*
     headRow.forEach(item=>{
