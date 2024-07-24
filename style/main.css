@@ -78,6 +78,10 @@ footer {
     width: 30%;
 }
 
+#mobile-menu {
+    display: none;
+}
+
 .absolute {
     position: absolute;
 }
@@ -93,8 +97,8 @@ footer {
     transform: translateX(-50%);
 }
 
-.thirty-percent {
-    width: 30%;
+.thirty-vh {
+    width: 30vh;
 }
 
 .ninty-percent {
@@ -142,4 +146,29 @@ footer {
     color: var(--coffee);
 
     box-shadow: 24px 16px 16px var(--blue3);
+}
+
+
+@media all and (max-width: 576px) {
+    nav.desktop {
+        display: none;
+    }
+    #mobile-menu {
+        display: block;
+        width: 64px;
+        height: 64px;
+        position: absolute;
+        top: 128px;
+        background-image: url('../img/noun-ice-cream-edit.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        border: var(--chocolate) 2px solid;
+        background-color: var(--pink);
+    }
+
+    nav.mobile {
+
+    }
 }
