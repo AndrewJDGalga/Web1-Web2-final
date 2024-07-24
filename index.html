@@ -13,7 +13,22 @@
     <header class="float-right ninty-percent">
         <h1>Dreamycone</h1>
         <h2 class="tagline">Nothing better than a cold cone on a hot day.</h2>
-        <nav>
+        <nav class="mobile">
+            <button id="mobile-menu" class="link-button"></button>
+            <ul style="display: none;">
+                <li>
+                    <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
+                </li>
+                <li>
+                    <a class="link-button" target="_blank" href="./pages/about.html">About</a>
+                </li>
+                <li>
+                    <a id="specials-popup" target="_blank" class="link-button link-specials" href="./pages/specials.html">Specials</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="desktop">
             <ul>
                 <li>
                     <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
@@ -26,7 +41,7 @@
                 </li>
             </ul>
         </nav>
-        <button id="mobile-menu" class="link-button"></button>
+        
     </header>
 
     <main>
@@ -41,7 +56,8 @@
         document.getElementById('specials-popup').onclick = () => { window.open('./pages/specials.html', '_blank', 'popup'); }
 
         document.getElementById('mobile-menu').onclick = () => {
-
+            const menu = document.querySelector('nav.mobile ul');
+            menu.style.display = (menu.style.display === "none") ? "flex" : "none";
         }
     </script>
 </body>

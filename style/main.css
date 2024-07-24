@@ -52,6 +52,7 @@ h2 {
 }
 
 nav {
+    display: block;
     margin-top: 64px;
 }
 
@@ -83,6 +84,7 @@ footer {
 
 .absolute {
     position: absolute;
+    z-index: -1;
 }
 
 .bottom-right {
@@ -111,6 +113,10 @@ footer {
 .tagline {
     font-size: medium;
     margin-left: 128px;
+}
+
+.mobile {
+    display: none;
 }
 
 .home-img {
@@ -149,25 +155,34 @@ footer {
 
 
 @media all and (max-width: 576px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 64px;
+    }
     nav ul{
-        position: relative;
+        display: none;
         flex-direction: column;
         justify-content: center;
         gap: 2.5em;
+    }
+    nav button {
+        margin-bottom: 24px;
     }
     #mobile-menu {
         display: block;
         width: 64px;
         height: 64px;
-        position: absolute;
-        top: 128px;
         background-image: url('../img/noun-ice-cream-edit.png');
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
         background-color: var(--pink);
-    }
-    .absolute {
-        z-index: -1;
     }
 }
