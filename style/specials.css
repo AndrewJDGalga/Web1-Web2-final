@@ -15,20 +15,26 @@ table {
     text-align: center;
     table-layout: fixed;
     border: solid var(--coffee) 2px;
+    border-collapse: collapse;
     margin: 8px;
 }
 
+tr:nth-child(odd) {
+    background-color: var(--coffee);
+}
+
+thead > tr {
+    border-bottom: solid var(--pink) 2px;
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
 td {
-    /*aspect-ratio: 4/3;*/
     width: 33%;
     overflow-y: hidden;
     padding: 8px;
 }
 td img {
-    /*
-    width: 60%;
-    height: 90%;
-    */
     object-fit: cover;
 }
 
