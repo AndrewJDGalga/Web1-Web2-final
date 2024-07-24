@@ -22,3 +22,14 @@ export function makeBlocks(content) {
     const noEmpty = rows.filter(line=> line !== "");
     return noEmpty.map(row=> row.split(','));
 }
+
+export const createTableCell = (tag, text='', src='') => {
+    const cell = document.createElement('td');
+    const cellElement = document.createElement(tag);
+
+    if(cellElement.nodeName === "IMG") cellElement.src = `../img/${src}`;
+    if(text !== "") cellElement.textContent = text;
+
+    cell.appendChild(cellElement);
+    return cell;
+}

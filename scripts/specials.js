@@ -1,4 +1,4 @@
-import { getCSVContent, makeBlocks } from "./utility.js";
+import { getCSVContent, makeBlocks, createTableCell } from "./utility.js";
 const specialsClose = document.getElementById('close');
 const specialsTableHead = document.querySelector('#specials thead');
 const specialsTableBody = document.querySelector('#specials tbody');
