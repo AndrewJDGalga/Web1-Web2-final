@@ -13,7 +13,7 @@
     <header class="float-right ninty-percent">
         <h1>Dreamycone</h1>
         <h2 class="tagline">Nothing better than a cold cone on a hot day.</h2>
-        <nav class="desktop">
+        <nav>
             <ul>
                 <li>
                     <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
@@ -27,21 +27,22 @@
             </ul>
         </nav>
         <button id="mobile-menu" class="link-button"></button>
-        <nav class="mobile">
-
-        </nav>
     </header>
 
     <main>
         <img class="home-img thirty-vh float-right absolute bottom-right" src="./img/coneSansBackground3.png" alt="Butterscotch ice cream in a cone">
     </main>
 
-    <footer>
+    <footer class="absolute">
         <p>&copy; Andrew Jonhardt 2024 for Austin Community College</p>
     </footer>
 
     <script>
         document.getElementById('specials-popup').onclick = () => { window.open('./pages/specials.html', '_blank', 'popup'); }
+
+        document.getElementById('mobile-menu').onclick = () => {
+
+        }
     </script>
 </body>
 </html>

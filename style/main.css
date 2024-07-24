@@ -71,7 +71,6 @@ nav ul a {
 
 footer {
     clear: both;
-    position: absolute;
     bottom: 0;
     margin-left: 16px;
     word-break: keep-all;
@@ -150,8 +149,11 @@ footer {
 
 
 @media all and (max-width: 576px) {
-    nav.desktop {
-        display: none;
+    nav ul{
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5em;
     }
     #mobile-menu {
         display: block;
@@ -163,12 +165,9 @@ footer {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        border-radius: 8px;
-        border: var(--chocolate) 2px solid;
         background-color: var(--pink);
     }
-
-    nav.mobile {
-
+    .absolute {
+        z-index: -1;
     }
 }
