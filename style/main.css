@@ -126,26 +126,16 @@ footer {
     display: none;
 }
 
-/*
-.home-main {
-    clear: both;
-    position: relative;
-    overflow: hidden;
-    height: 50%;
-}
-*/
-
 .home-img {
     min-width: 156px;
     max-width: 1920px;
     margin-right: 64px;
-    
+
     animation-name: slide-right;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-play-state: running;
-   
 }
 
 .link-button {
@@ -177,11 +167,10 @@ footer {
 }
 
 @keyframes slide-right {
-    0% {
+    from {
         right: -40%;
-        
     }
-    100% {
+    to {
         right: 90%;
     }
 }
