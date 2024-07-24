@@ -1,6 +1,5 @@
 @import 'tables.css';
 
-main {
-    clear: both;
+table {
+    min-width: 576px;
 }
-
