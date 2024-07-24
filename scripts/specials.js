@@ -29,9 +29,16 @@ if(content !== '') {
         const bodTR = document.createElement('tr');
         const description = document.createElement('p');
         const img = document.createElement('img');
-        const date = document.createElement('time');
+        const date = document.createElement('p');
 
+        description.textContent = row[0];
+        img.src = `../img/${row[1]}`;
+        const leadingZero = /0(?=\d)/g;
+        const correctedDate = row[2].replace(leadingZero, '');
+        console.log(correctedDate);
 
-    })
-    console.log(bodyRows);
+        //date.textContent = correctedDate;
+        //bodTR.append
+    });
+    //console.log(bodyRows);
 }
