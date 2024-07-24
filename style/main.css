@@ -131,7 +131,7 @@ footer {
     max-width: 1920px;
     margin-right: 64px;
 
-    animation-name: slide-right;
+    animation-name: cone-slide;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -166,11 +166,11 @@ footer {
     box-shadow: 24px 16px 16px var(--blue3);
 }
 
-@keyframes slide-right {
-    from {
+@keyframes cone-slide {
+    0% {
         right: -40%;
     }
-    to {
+    100% {
         right: 90%;
     }
 }
