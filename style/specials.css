@@ -2,6 +2,10 @@ main {
     clear: both;
 }
 
+table {
+    width: 70%;
+}
+
 #close {
     top: 32px;
 }

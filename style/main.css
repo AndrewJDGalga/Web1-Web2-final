@@ -92,6 +92,10 @@ footer {
     right: 0;
 }
 
+.margin-center {
+    margin: 0 auto;
+}
+
 .transform-center {
     position: relative;
     left: 50%;

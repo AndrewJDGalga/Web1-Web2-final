@@ -38,7 +38,6 @@ if(content !== '') {
         img.src = `../img/${row[1]}`;
         const leadingZero = /0(?=\d)/g;
         const correctedDate = row[2].replace(leadingZero, '');
-        console.log(correctedDate);
 
         date.textContent = correctedDate;
 
