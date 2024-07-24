@@ -1,7 +1,13 @@
 const specialsBtns = document.getElementsByClassName('specials-popup');
 
 for(let i = 0; i < specialsBtns.length; i++) {
-    specialsBtns[i].onclick = () => { window.open('./pages/specials.html', '_blank', 'popup'); }
+    const locationTest = window.location.href;
+    const criteria = /pages/g;
+    const result = locationTest.search(criteria);
+    specialsBtns[i].onclick = () => { 
+        const specialsLocation = (result === -1) ? './pages/specials.html' : '../pages/specials.html';
+        window.open(specialsLocation, '_blank', 'popup');
+    }
 }
 
 document.getElementById('mobile-menu').onclick = () => {
