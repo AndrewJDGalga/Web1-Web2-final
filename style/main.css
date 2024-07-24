@@ -147,8 +147,8 @@ footer {
 }
 
 .link-specials {
-    background-color: var(--coffee);
-    color: var(--blue3);
+    background-color: var(--black);
+    color: var(--pink);
 }
 .link-specials:hover, .link-specials:active {
     background-color: var(--blue3);
