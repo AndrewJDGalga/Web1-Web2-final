@@ -35,6 +35,9 @@ td img {
 }
 
 @media all and (max-width: 576px){
+    table {
+        width: 100%;
+    }
     .float-right {
         float: none;
     }
