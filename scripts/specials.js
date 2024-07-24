@@ -10,7 +10,6 @@ specialsClose.onclick = () => {
 
 const content = await getCSVContent(specialsCSVLocation);
 
-
 if(content !== '') {
     const rows = makeBlocks(content);
     const headRow = rows[0];
@@ -27,9 +26,13 @@ if(content !== '') {
     const bodyFrag = document.createDocumentFragment();
     bodyRows.forEach(row=>{
         const bodTR = document.createElement('tr');
+        
         const description = document.createElement('p');
+        const descriptionCell = document.createElement('td');
         const img = document.createElement('img');
+        const imgCell = document.createElement('td');
         const date = document.createElement('p');
+        const dateCell = document.createElement('td');
 
         description.textContent = row[0];
         img.src = `../img/${row[1]}`;
@@ -37,8 +40,15 @@ if(content !== '') {
         const correctedDate = row[2].replace(leadingZero, '');
         console.log(correctedDate);
 
-        //date.textContent = correctedDate;
-        //bodTR.append
+        date.textContent = correctedDate;
+
+        descriptionCell.append(description);
+        imgCell.append(img);
+        dateCell.append(date);
+        
+        bodTR.append(descriptionCell, imgCell, dateCell);
+        bodyFrag.append(bodTR);
     });
-    //console.log(bodyRows);
+    
+    specialsTableBody.append(bodyFrag);
 }
