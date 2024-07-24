@@ -7,25 +7,41 @@
     <link rel="stylesheet" href="https://use.typekit.net/urn6jcl.css">
     <link href="../style/main.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="../img/noun-ice-cream-icon16.jpg">
-    
+    <script src="../scripts/index.js" defer></script>
 </head>
 <body>
     
     <header class="float-right ninty-percent">
         <h1>Dreamycone</h1>
-        <nav>
-            <ul>
+        <nav class="mobile">
+            <button id="mobile-menu" class="link-button"></button>
+            <ul style="display: none;">
                 <li>
-                    <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
+                    <a class="link-button" target="_blank" href="../index.html">Home</a>
                 </li>
                 <li>
-                    <a class="link-button" target="_blank" href="./pages/about.html">About</a>
+                    <a class="link-button" target="_blank" href="./menu.html">Menu</a>
                 </li>
                 <li>
-                    <a id="specials-popup" target="_blank" class="link-button link-specials" href="./pages/specials.html">Specials</a>
+                    <a target="_blank" class="link-button specials-popup link-specials" href="./specials.html">Specials</a>
                 </li>
             </ul>
         </nav>
+
+        <nav class="desktop">
+            <ul>
+                <li>
+                    <a class="link-button" target="_blank" href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a class="link-button" target="_blank" href="./menu.html">Menu</a>
+                </li>
+                <li>
+                    <a target="_blank" class="link-button link-specials specials-popup" href="./specials.html">Specials</a>
+                </li>
+            </ul>
+        </nav>
+        
     </header>
 
     <main>
