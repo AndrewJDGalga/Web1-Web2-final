@@ -3,6 +3,7 @@ const specialsClose = document.getElementById('close');
 const specialsTableHead = document.querySelector('#specials thead');
 const specialsTableBody = document.querySelector('#specials tbody');
 const specialsCSVLocation = '../data/specials.csv';
+const imgLocationPosition = 1;
 
 specialsClose.onclick = () => {
     window.close();
@@ -12,42 +13,27 @@ const content = await getCSVContent(specialsCSVLocation);
 
 if(content !== '') {
     const rows = makeBlocks(content);
-    const headRow = rows[0];
+    const headRowSrc = rows[0];
     const bodyRows = rows.slice(1);
-
-    const headTR = document.createElement('tr');
-    headRow.forEach(item=>{
-        const headCol = document.createElement('th');
-        headCol.textContent = item;
-        headTR.appendChild(headCol);
-    })
-    specialsTableHead.appendChild(headTR);
-
     const bodyFrag = document.createDocumentFragment();
-    bodyRows.forEach(row=>{
-        const bodTR = document.createElement('tr');
-        
-        const description = document.createElement('p');
-        const descriptionCell = document.createElement('td');
-        const img = document.createElement('img');
-        const imgCell = document.createElement('td');
-        const date = document.createElement('p');
-        const dateCell = document.createElement('td');
 
-        description.textContent = row[0];
-        img.src = `../img/${row[1]}`;
-        const leadingZero = /0(?=\d)/g;
-        const correctedDate = row[2].replace(leadingZero, '');
+    const headRow = document.createElement('tr');
 
-        date.textContent = correctedDate;
-
-        descriptionCell.append(description);
-        imgCell.append(img);
-        dateCell.append(date);
-        
-        bodTR.append(descriptionCell, imgCell, dateCell);
-        bodyFrag.append(bodTR);
+    headRowSrc.forEach(element => {
+        const newCell = createTableCell('p', element);
+        headRow.appendChild(newCell);
     });
+
+    specialsTableHead.append(headRow);
     
-    specialsTableBody.append(bodyFrag);
+    bodyRows.forEach(arr=>{
+        const bodyRow = document.createElement('tr');
+        for(let i = 0; i < arr.length; i++){
+            const newCell = (i === imgLocationPosition) ? createTableCell('img', '', arr[i]) : createTableCell('p', arr[i]);
+            bodyRow.appendChild(newCell);
+        }
+        bodyFrag.appendChild(bodyRow);
+    });
+
+    specialsTableBody.appendChild(bodyFrag);
 }
