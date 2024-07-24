@@ -1,0 +1,48 @@
+caption {
+    margin-top: 64px;
+    font-size: larger;
+    font-weight: 600;
+    color: var(--blue3);
+
+}
+
+table {
+    width: 70%;
+    text-align: center;
+    table-layout: fixed;
+    border: solid var(--coffee) 2px;
+    border-collapse: collapse;
+    margin: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--coffee);
+}
+
+thead > tr {
+    border-bottom: solid var(--pink) 2px;
+    height: 2.5rem;
+    box-sizing: border-box;
+}
+
+td {
+    width: 33%;
+    overflow-y: hidden;
+    padding: 8px;
+}
+td img {
+    object-fit: cover;
+}
+
+@media all and (max-width: 576px){
+    .float-right {
+        float: none;
+    }
+    .ninty-percent {
+        width: 100%;
+    }
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
+}
