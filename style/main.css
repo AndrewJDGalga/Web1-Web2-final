@@ -46,6 +46,9 @@ h1 {
     margin: 0;
     text-shadow: 24px 16px 24px var(--chocolate);
 }
+h1 a {
+    text-decoration: none;
+}
 
 h2 {
     text-shadow: 8px 8px 8px var(--chocolate);
