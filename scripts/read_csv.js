@@ -16,3 +16,9 @@ export async function getCSVContent(filename) {
     }
     return content;
 }
+
+export function makeBlocks(content) {
+    const rows = content.split('\r\n');
+    const noEmpty = rows.filter(line=> line !== "");
+    return noEmpty.map(row=> row.split(','));
+}
