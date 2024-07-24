@@ -1,9 +1,20 @@
-import { getCSVContent, makeBlocks } from "../scripts/read_csv.js";
+import { getCSVContent, makeBlocks } from "./utility.js";
 const menuTableHead = document.querySelector('#menu thead');
 const menuTableBody = document.querySelector('#menu tbody');
 const menuCSVLocation = '../data/menu.csv';
 
 const content = await getCSVContent(menuCSVLocation);
+
+const createTableCell = (tag, text="", src="") => {
+    const cell = document.createElement('td');
+    const cellElement = document.createElement(tag);
+
+    if(cellElement.hasAttribute('src')) cellElement.src = src;
+    if(text !== "") cellElement.textContent = text;
+
+    cell.appendChild(cellElement);
+    return cell;
+}
 
 if(content !== '') {
     const rows = makeBlocks(content);
@@ -11,6 +22,15 @@ if(content !== '') {
     const bodyRows = rows.slice(1);
 
     const headTR = document.createElement('tr');
+
+    headRow.forEach(element => {
+        const newCell = createTableCell('p', element);
+        headTR.appendChild(newCell);
+    });
+
+    menuTableHead.append(headTR);
+    
+    /*
     headRow.forEach(item=>{
         const headCol = document.createElement('th');
         headCol.textContent = item;
@@ -45,4 +65,6 @@ if(content !== '') {
     });
     
     menuTableBody.append(bodyFrag);
+    */
 }
+
