@@ -74,6 +74,8 @@ footer {
     position: absolute;
     bottom: 0;
     margin-left: 16px;
+    word-break: keep-all;
+    width: 30%;
 }
 
 .absolute {
@@ -83,11 +85,6 @@ footer {
 .bottom-right {
     bottom: 0;
     right: 0;
-}
-
-/*Remove?*/
-.margin-center {
-    margin: 0 auto;
 }
 
 .transform-center {
