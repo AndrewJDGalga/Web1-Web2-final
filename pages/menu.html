@@ -6,7 +6,8 @@
     <title>Dreamycone Menu</title>
     <link rel="stylesheet" href="https://use.typekit.net/urn6jcl.css">
     <link href="../style/main.css" rel="stylesheet" />
-    <script src="../scripts/menu.js" defer></script>
+    <script src="../scripts/index.js" defer></script>
+    <script src="../scripts/menu.js" type="module" defer></script>
     <link rel="icon" type="image/x-icon" href="../img/noun-ice-cream-icon16.jpg">
     <link href="../style/menu.css" rel="stylesheet">
 </head>
@@ -14,7 +15,23 @@
     
     <header class="float-right ninty-percent">
         <h1>Dreamycone</h1>
-        <nav>
+        <h2 class="tagline">Nothing better than a cold cone on a hot day.</h2>
+        <nav class="mobile">
+            <button id="mobile-menu" class="link-button"></button>
+            <ul style="display: none;">
+                <li>
+                    <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
+                </li>
+                <li>
+                    <a class="link-button" target="_blank" href="./pages/about.html">About</a>
+                </li>
+                <li>
+                    <a target="_blank" class="link-button specials-popup link-specials" href="./pages/specials.html">Specials</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="desktop">
             <ul>
                 <li>
                     <a class="link-button" target="_blank" href="./pages/menu.html">Menu</a>
@@ -23,10 +40,11 @@
                     <a class="link-button" target="_blank" href="./pages/about.html">About</a>
                 </li>
                 <li>
-                    <a id="specials-popup" target="_blank" class="link-button link-specials" href="./pages/specials.html">Specials</a>
+                    <a target="_blank" class="link-button link-specials specials-popup" href="./pages/specials.html">Specials</a>
                 </li>
             </ul>
         </nav>
+        
     </header>
 
     <main>
