@@ -41,3 +41,16 @@ td img {
 #close {
     top: 32px;
 }
+
+@media all and (max-width: 576px){
+    .float-right {
+        float: none;
+    }
+    .ninty-percent {
+        width: 100%;
+    }
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
+}
