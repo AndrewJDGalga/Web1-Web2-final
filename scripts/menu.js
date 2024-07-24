@@ -10,7 +10,12 @@ const createTableCell = (tag, text='', src='') => {
     const cell = document.createElement('td');
     const cellElement = document.createElement(tag);
 
-    if(cellElement.hasAttribute('src')) cellElement.src = src;
+    console.log(cellElement.nodeName);
+
+    
+    if(cellElement.nodeName === "IMG") {
+        cellElement.src = `../img/${src}`;
+    }
     if(text !== "") cellElement.textContent = text;
 
     cell.appendChild(cellElement);
@@ -35,7 +40,7 @@ if(content !== '') {
     bodyRows.forEach(arr=>{
         const bodyRow = document.createElement('tr');
         for(let i = 0; i < arr.length; i++){
-            const newCell = (i === imgLocationPosition) ? createTableCell('img', '', arr[i]) : createTableCell('i', arr[i]);
+            const newCell = (i === imgLocationPosition) ? createTableCell('img', '', arr[i]) : createTableCell('p', arr[i]);
             bodyRow.appendChild(newCell);
         }
         bodyFrag.appendChild(bodyRow);
