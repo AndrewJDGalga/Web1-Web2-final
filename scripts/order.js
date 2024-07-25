@@ -15,6 +15,14 @@ let cart = {
     }
 };
 
+function changeCount(e) {
+    //onchange triggered through manual entering of invalid values, must check
+    if(e.target.value < 0 || e.target.value > e.target.max) return;
+
+    cart[e.target.id].count = parseInt(e.target.value);
+    console.log(cart);
+}
+
 if(content != ''){
     const rows = makeBlocks(content);
     const bodyRows = rows.slice(1);
@@ -39,6 +47,7 @@ if(content != ''){
         amt.min='0';
         amt.max=`${bodyRows[i][2]}`;
         amt.value = '0';
+        amt.onchange = changeCount;
         const amtLabel = document.createElement('label');
         amtLabel.for = forRef;
         amtLabel.textContent = `Order? (less than ${bodyRows[i][2]}): `;
@@ -50,7 +59,6 @@ if(content != ''){
     }
 
     orderForm.insertBefore(formFrag, orderFormBtn);
-    console.log(cart);
 }
 
 orderForm.onsubmit = (e) => {
