@@ -1,3 +1,19 @@
 main {
     clear: both;
+    padding-top: 32px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h2 + p {
+    font-style: italic;
+    text-align: center;
+}
+
+@media all and (max-width: 576px) {
+    main {
+        padding-top: 72px;
+    }
 }
