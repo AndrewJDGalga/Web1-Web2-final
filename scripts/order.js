@@ -42,6 +42,7 @@ if(content != ''){
 
     for(let i = 0; i < bodyRows.length; i++) {
         const field = document.createElement('fieldset');
+        field.className = 'margin-center';
 
         const legend = document.createElement('legend');
         legend.textContent = bodyRows[i][0];

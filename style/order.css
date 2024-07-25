@@ -12,10 +12,31 @@ h2 + p {
     text-align: center;
 }
 
+form {
+    border-collapse: collapse;
+    border-top: 4px solid var(--coffee);
+}
+form button {
+    margin-top: 16px;
+}
+
 fieldset {
     text-align: left;
-    border: none;
+    background-color: var(--white);
+    border: 2px solid var(--coffee);
+    border-left: none;
+    border-right: none;
+    border-collapse: inherit;
+    width: 90%;
 }
+
+fieldset:first-child {
+    border-top: none;
+}
+fieldset:last-of-type {
+    border-bottom-width: 4px;
+}
+
 legend {
     float: left;
 }
