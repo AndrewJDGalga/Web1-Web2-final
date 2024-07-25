@@ -12,8 +12,16 @@ const imageLocations = [
     '../img/ad_images/yes-and-studio-XVYz_QeiEBw-unsplash-small.jpg'
 ];
 
+const randomImageString = () => {
+    return imageLocations[Math.floor(Math.random() * imageLocations.length)];
+}
+
 window.onload = () => {
     for(let i = 0; i < adImg.length; i++) {
-        adImg[i].style.backgroundImage = `url(${imageLocations[i]})`;
+        adImg[i].style.backgroundImage = `url(${randomImageString()})`;
     }
+
+    setInterval(()=>{
+        adImg[Math.floor(Math.random() * adImg.length)].style.backgroundImage = `url(${randomImageString()})`;
+    }, 3000);
 }
