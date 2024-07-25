@@ -1,0 +1,10 @@
+#ad {
+    clear: both;
+    width: 70%;
+    min-width: 256px;
+    height: 20%;
+    min-height: 256px;
+    margin-top: 32px;
+    background-color: var(--blue3);
+    border-radius: 16px;
+}
