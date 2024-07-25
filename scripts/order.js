@@ -5,7 +5,7 @@ const orderCSVLocation = '../data/online_items.csv';
 
 const content = await getCSVContent(orderCSVLocation);
 
-const tax = 0.0825;
+const taxPercent = 0.0825;
 let cart = {
     setItem(name, price) {
         cart[name] = {
@@ -21,6 +21,11 @@ let cart = {
             total += price * count;
         }
         return total;
+    },
+    finalTotal(tax){
+        const base = this.baseTotal();
+        const percentTax = base * tax;
+        return base + percentTax;
     }
 };
 
@@ -73,7 +78,7 @@ if(content != ''){
 orderForm.onsubmit = (e) => {
     e.preventDefault();
 
-    console.log(cart.baseTotal());
+    console.log(cart.finalTotal(taxPercent));
 
     //alert('Clicked');
 }
