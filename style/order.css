@@ -23,7 +23,7 @@ form button {
 fieldset {
     text-align: left;
     background-color: var(--white);
-    border: 2px solid var(--coffee);
+    border: 2px solid var(--pink);
     border-left: none;
     border-right: none;
     border-collapse: inherit;
@@ -47,5 +47,8 @@ fieldset p, fieldset label {
 @media all and (max-width: 576px) {
     main {
         padding-top: 72px;
+    }
+    fieldset {
+        width: 100%;
     }
 }
