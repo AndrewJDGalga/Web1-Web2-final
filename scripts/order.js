@@ -73,12 +73,7 @@ if(content != ''){
     orderForm.insertBefore(formFrag, orderFormBtn);
 }
 
-
-
 orderForm.onsubmit = (e) => {
     e.preventDefault();
-
-    console.log(cart.finalTotal(taxPercent));
-
-    //alert('Clicked');
+    alert('Your total: $' + cart.finalTotal(taxPercent).toFixed(2));
 }
