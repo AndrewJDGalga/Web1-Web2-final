@@ -5,6 +5,13 @@ const orderCSVLocation = '../data/online_items.csv';
 
 const content = await getCSVContent(orderCSVLocation);
 
+const tax = 0.0825;
+let cart = {
+    setItem(name, price) {
+        cart[name] = price;
+    }
+};
+
 if(content != ''){
     const rows = makeBlocks(content);
     const bodyRows = rows.slice(1);
@@ -35,9 +42,12 @@ if(content != ''){
         field.append(amtLabel, amt);
         
         formFrag.append(field);
+
+        cart.setItem(forRef, bodyRows[i][1]);
     }
 
     orderForm.insertBefore(formFrag, orderFormBtn);
+    console.log(cart);
 }
 
 orderForm.onsubmit = (e) => {
