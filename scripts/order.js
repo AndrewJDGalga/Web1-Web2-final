@@ -12,15 +12,22 @@ let cart = {
             "price" : price,
             "count" : 0
         };
+    },
+    baseTotal() {
+        let total = 0;
+        for(const key in cart){
+            const price = (cart[key].price === undefined) ? 0.00 : cart[key].price;
+            const count = (cart[key].count === undefined) ? 0 : cart[key].count;
+            total += price * count;
+        }
+        return total;
     }
 };
 
 function changeCount(e) {
     //onchange triggered through manual entering of invalid values, must check
     if(e.target.value < 0 || e.target.value > e.target.max) return;
-
     cart[e.target.id].count = parseInt(e.target.value);
-    console.log(cart);
 }
 
 if(content != ''){
@@ -43,7 +50,7 @@ if(content != ''){
         amt.type = 'number';
         const forRef = bodyRows[i][0].toLowerCase().replaceAll(' ', '');
         amt.id = forRef;
-        amt.dataset.price = parseInt(bodyRows[i][1].replace('$',''));
+        amt.dataset.price = parseFloat(bodyRows[i][1].replace('$',''));
         amt.min='0';
         amt.max=`${bodyRows[i][2]}`;
         amt.value = '0';
@@ -55,14 +62,18 @@ if(content != ''){
         
         formFrag.append(field);
 
-        cart.setItem(forRef, parseInt(bodyRows[i][1].replace('$','')));
+        cart.setItem(forRef, amt.dataset.price);
     }
 
     orderForm.insertBefore(formFrag, orderFormBtn);
 }
 
+
+
 orderForm.onsubmit = (e) => {
     e.preventDefault();
 
-    alert('Clicked');
+    console.log(cart.baseTotal());
+
+    //alert('Clicked');
 }
