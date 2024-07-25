@@ -12,4 +12,8 @@ const imageLocations = [
     '../img/ad_images/yes-and-studio-XVYz_QeiEBw-unsplash-small.jpg'
 ];
 
-
+window.onload = () => {
+    for(let i = 0; i < adImg.length; i++) {
+        adImg[i].style.backgroundImage = `url(${imageLocations[i]})`;
+    }
+}
