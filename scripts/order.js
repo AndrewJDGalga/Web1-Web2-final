@@ -61,7 +61,7 @@ if(content != ''){
         amt.value = '0';
         amt.onchange = changeCount;
         const amtLabel = document.createElement('label');
-        amtLabel.for = forRef;
+        amtLabel.htmlFor = forRef;
         amtLabel.textContent = `Order? (less than ${bodyRows[i][2]}): `;
         field.append(amtLabel, amt);
         

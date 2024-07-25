@@ -12,6 +12,17 @@ h2 + p {
     text-align: center;
 }
 
+fieldset {
+    text-align: left;
+    border: none;
+}
+legend {
+    float: left;
+}
+fieldset p, fieldset label {
+    padding: 8px 0 0 32px;
+}
+
 @media all and (max-width: 576px) {
     main {
         padding-top: 72px;
