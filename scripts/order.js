@@ -8,7 +8,10 @@ const content = await getCSVContent(orderCSVLocation);
 const tax = 0.0825;
 let cart = {
     setItem(name, price) {
-        cart[name] = price;
+        cart[name] = {
+            "price" : price,
+            "count" : 0
+        };
     }
 };
 
@@ -43,7 +46,7 @@ if(content != ''){
         
         formFrag.append(field);
 
-        cart.setItem(forRef, bodyRows[i][1]);
+        cart.setItem(forRef, parseInt(bodyRows[i][1].replace('$','')));
     }
 
     orderForm.insertBefore(formFrag, orderFormBtn);
